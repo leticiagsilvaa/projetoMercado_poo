@@ -1,0 +1,11 @@
+import java.time.LocalDate;
+
+public class PagamentoPix extends Pagamento{
+    //atributos
+    private String chavepix
+// Construtor
+public PagamentoPix(double valor, LocalDate data, String descricao, String status, int idPagamento, String chavePix) {
+    super(valor, data, descricao, status, idPagamento);
+    this.chavePix = chavePix;
+}
+}

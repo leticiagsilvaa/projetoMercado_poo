@@ -1,0 +1,16 @@
+import java.time.LocalDate;
+
+// Classe filha PagamentoDebito
+public class PagamentoDebito extends Pagamento {
+    private String numeroCartao;
+    private String tipoDebito;
+
+    // Construtor
+    public PagamentoDebito(double valor, LocalDate data, String descricao, String status, int idPagamento, String numeroCartao, String tipoDebito) {
+        super(valor, data, descricao, status, idPagamento);
+        this.numeroCartao = numeroCartao;
+        this.tipoDebito = tipoDebito;
+    }
+
+   
+}

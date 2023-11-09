@@ -1,0 +1,17 @@
+import java.time.LocalDate;
+
+// Classe filha PagamentoCredito
+public class PagamentoCredito extends Pagamento {
+    private String numeroCartao;
+    private String tipoCredito;
+
+    // Construtor
+    public PagamentoCredito(double valor, LocalDate data, String descricao, String status, int idPagamento, String numeroCartao, String tipoCredito) {
+        super(valor, data, descricao, status, idPagamento);
+        this.numeroCartao = numeroCartao;
+        this.tipoCredito = tipoCredito;
+    }
+
+    // Métodos getters e setters
+    // ... (código dos métodos getters e setters para numeroCartao e tipoCredito)
+}
