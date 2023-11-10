@@ -20,4 +20,25 @@ O Sistema de Venda Simples tem como objetivo facilitar o processo de compra para
 - Inicie a venda e escolha a forma de pagamento (Pix, cartão ou dinheiro).
 - Efetue o pagamento e conclua a compra.
 
+## Divisão de Responsabilidades
+### Leticia Gomes
+Classes:
++ Pessoa
++ Cliente
++ OperadorDeCaixa
+### Mateus Abdias
+Classes:
++ Compra
++ Carrinho
+### Maria Luisa
+Classes:
++ ItemDoCarrinho
++ Produto
+### Ruan Carlos
+Classes:
++ Pagamento
++ PagamentoDinheiro
++ PagamentoCartao
++ PagamentoPix
+
 Este projeto é parte do trabalho da equipe composta por Letícia Gomes, Mateus Abdias, Ruan Carlos e Maria Luisa para a disciplina de Introdução à Programação 2 com o professor Paulo Anselmo.
