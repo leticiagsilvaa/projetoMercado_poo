@@ -2,7 +2,7 @@ package classes;
 
 public class Cliente extends Pessoa {
     private String idCliente;
-    private List<Compra> historicoCompras;
+    private List<Venda> historicoCompras;
 
     public Cliente(String nome, String endereco, String telefone, String cpf, String idCliente) {
         super(nome, endereco, telefone, cpf);
@@ -15,13 +15,13 @@ public class Cliente extends Pessoa {
         return idCliente;
     }
 
-    public List<Compra> getHistoricoCompras() {
+    public List<Venda> getHistoricoCompras() {
         return historicoCompras;
     }
     
     //métodos
     public void adicionarAoHistorico() {
-        Compra novaCompra = new Compra(produtosComprados, valorTotalCompra); //exemplo de parametros
+        Venda novaCompra = new Venda(produtosComprados, valorTotalCompra); //exemplo de parametros
         historicoCompras.add(novaCompra);
     } 
 }
