@@ -1,3 +1,5 @@
+package classes;
+
 public class Cliente extends Pessoa {
     private String idCliente;
     private List<Compra> historicoCompras;

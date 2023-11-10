@@ -1,3 +1,5 @@
+package classes;
+
 public class Carrinho {
     private Cliente cliente;
     private ItemDoCarrinho produto;

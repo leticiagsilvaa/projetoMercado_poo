@@ -1,3 +1,5 @@
+package classes;
+
 public class OperadorDeCaixa extends Pessoa {
     private int idCaixa;
 
