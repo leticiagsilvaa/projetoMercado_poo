@@ -1,12 +1,15 @@
+package classes;
+
+import java.util.List;
 
 public class Carrinho {
     private Cliente cliente;
-    private ItemDoCarrinho produto;
+    private List<ItemDoCarrinho> produto;
 
     private int idCarrinho;
     private double subTotal;
 
-    public Carrinho(Cliente cliente, ItemDoCarrinho produto, int idCarrinho, double subTotal) {
+    public Carrinho(Cliente cliente, List<ItemDoCarrinho> produto, int idCarrinho, double subTotal) {
         this.cliente = cliente;
         this.produto = produto;
         this.idCarrinho = idCarrinho;
@@ -14,12 +17,7 @@ public class Carrinho {
     }
 
     // Metodos de carrinho
-    public void adicionarAoCarrinho(ItemDoCarrinho produto) {
-        this.produto = produto;
-    }
-    public void removerDoCarrinho(ItemDoCarrinho produto) {
-        this.produto = null;
-    }
+    // implementar o esvaziar carrinho
 
     // Metodos Getters e Setters da classe carrinho
     public int getIdCarrinho() {
@@ -31,7 +29,7 @@ public class Carrinho {
     public Cliente getCliente() {
         return cliente;
     }
-    public ItemDoCarrinho getItemDoCarrinho() {
+    public List<ItemDoCarrinho> getItemDoCarrinho() {
         return produto;
     }
 
@@ -44,7 +42,7 @@ public class Carrinho {
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
-    public void setItem(ItemDoCarrinho produto) {
+    public void setItem(List<ItemDoCarrinho> produto) {
         this.produto = produto;
     }
 }
