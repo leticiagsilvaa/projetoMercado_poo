@@ -7,13 +7,15 @@ public class Pagamento {
     private LocalDate data;
     private String status;
     private int idpagamento;
-
-    public Pagamento(String codigo, double valor, LocalDate data, String status, int idPagamento) {
+    private Venda venda;
+   
+    public Pagamento(String codigo, double valor, LocalDate data, String status, int idPagamento,Venda venda) {
         this.codigo = codigo;
         this.valor = valor;
         this.data = data;
         this.status = status;
         this.idpagamento = idPagamento;
+        this.venda = venda
     }
 
     // getters
@@ -36,15 +38,17 @@ public class Pagamento {
     public int getIdPagamento() {
         return idpagamento;
     }
-
+    public Venda getVenda() {
+    	return Venda
+    }
     // setters
     public void setCodigo(String codigo) {
         this.codigo = codigo;
-
     }
 
     public void setValor(double valor) {
         this.valor = valor;
+        
     }
 
     public void setData(LocalDate data) {
@@ -57,6 +61,9 @@ public class Pagamento {
 
     public void setIdPagamento(int idPagamento) {
         this.idpagamento = idPagamento;
+    }
+    public void setVenda(Venda venda) {
+    	this.venda = venda
     }
 
     // métodos
