@@ -1,15 +1,15 @@
 package classes;
 
-public class Pessoa {
-    private int cpf;
+public abstract class Pessoa {
+    private String cpf;
     private String nome;
-    private String endereço;
+    private String endereco;
     private String telefone;
 
-    public Pessoa (int cpf, String nome, String endereço, String telefone){
+    public Pessoa(String cpf, String nome, String endereco, String telefone) {
         this.cpf = cpf;
         this.nome = nome;
-        this.endereço = endereço;
+        this.endereco = endereco;
         this.telefone = telefone;
     }
 
@@ -29,12 +29,36 @@ public class Pessoa {
     public String getCpf() {
         return cpf;
     }
+    // Setters
 
-    // Métodos
-    public void exibirInformacoes() {
-        System.out.println("Nome: " + getNome());
-        System.out.println("Endereço: " + getEndereco());
-        System.out.println("Telefone: " + getTelefone());
-        System.out.println("CPF: " + getCpf());
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+    // Métodos abstratos
+
+    public abstract void exibirInformacoes();
+
+    public abstract void atualizarInformacoes(String atributo, String novoValor);
+
+    // Método toString
+
+    public String toString() {
+        return getNome() + "{" +
+                "cpf: " + getCpf() + '\'' +
+                ", endereco: '" + getEndereco() + '\'' +
+                ", telefone: '" + getTelefone() + '\'' +
+                '}';
     }
 }
