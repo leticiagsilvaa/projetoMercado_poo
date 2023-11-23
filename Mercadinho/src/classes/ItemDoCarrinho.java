@@ -5,29 +5,33 @@ public class ItemDoCarrinho {
     private int quantidadeItem;
     private double valorRemessa;
 
-    public ItemDoCarrinho( int quantidadeItem, Produto produto, double valorRemessa) {
+    public ItemDoCarrinho(int quantidadeItem, Produto produto, double valorRemessa) {
         this.produto = produto;
         this.quantidadeItem = quantidadeItem;
-        this.valorRemessa = valorRemessa;
+        calcularRemessa();
     }
 
-    //getters
-    public double getValor(){
+    // getters
+    public double getValor() {
         return valorRemessa;
     }
-     public int getQuantidade(){
+
+    public int getQuantidade() {
         return quantidadeItem;
     }
-    //setters
-    public void setValor(double valor){
+
+    // setters
+    public void setValor(double valor) {
         this.valorRemessa = valor;
     }
-     public void setQuantidade(int quantidade){
+
+    public void setQuantidade(int quantidade) {
         this.quantidadeItem = quantidade;
     }
-    //métodos
-    public double calcularRemessa(){
-       valorRemessa = quantidadeItem * produto.getValor();
-       return valorRemessa;
+
+    // métodos
+    public double calcularRemessa() {
+        valorRemessa = quantidadeItem * produto.getValor();
+        return valorRemessa;
     }
 }

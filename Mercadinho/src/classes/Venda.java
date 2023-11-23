@@ -25,14 +25,7 @@ public class Venda {
         return this.valorTotal;
     }
 
-    public void finalizarCompra() {
-    }
-
-    public void cancelarCompra() {
-    }
-
     public void adicionarAoHistorico() {
-        Venda novaCompra = new Venda(produtosComprados, valorTotalCompra); // exemplos de parametros
         cliente.getHistoricoCompras().add(this);
     }
 

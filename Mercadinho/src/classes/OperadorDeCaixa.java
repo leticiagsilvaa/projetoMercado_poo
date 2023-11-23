@@ -1,9 +1,11 @@
 package classes;
 
+import java.util.Scanner;
+
 public class OperadorDeCaixa extends Pessoa {
     private int idCaixa;
 
-    public OperadorDeCaixa (int cpf, String nome, String endereço, String telefone, int idCaixa) {
+    public OperadorDeCaixa(String cpf, String nome, String endereço, String telefone, int idCaixa) {
         super(cpf, nome, endereço, telefone);
         this.idCaixa = idCaixa;
     }
@@ -12,23 +14,37 @@ public class OperadorDeCaixa extends Pessoa {
         return idCaixa;
     }
 
-    //métodos
+    // métodos
     public void iniciarAtendimento() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Por favor, digite o CPF do cliente: ");
+        String cpfCliente = scanner.nextLine();
         System.out.println("Iniciando atendimento no caixa: " + getIdCaixa());
     }
 
     public void finalizarAtendimento() {
-        //efetuarPagamento()
-        //adicionarAoHistorico()
-        System.out.println("Compra realizada com sucesso!. Volte sempre, " + getNome(););
+        System.out.println("Compra realizada com sucesso!. Volte sempre, " + getNome());
     }
 
     public void processarVenda(Venda venda) {
-        //iniciar atendimento()
-        //solicitar cpf do cliente
-        //bem vindo (nome)
-        //pensar em como processar os produtos do carrinho (precisa da classe itemDoCarrinho)
-        //finalizarAtendimento() 
+        iniciarAtendimento();
+        // Adicionar produtos ao carrinho (depende da implementação de Carrinho e
+        // Produto)
+        // Calcular valor total (pode ser feito na classe Carrinho ou na própria Venda)
+        // Efetuar pagamento (depende da implementação de Pagamento)
+        finalizarAtendimento();
+        venda.adicionarAoHistorico();
     }
 
+    public void cancelarVenda() {
+        // Lógica para cancelar uma venda em andamento, limpar o carrinho, etc.
+    }
+
+    public void consultarHistoricoCompras(Cliente cliente) {
+        // Lógica para consultar o histórico de compras de um cliente.
+    }
+
+    public void adicionarProdutoAoEstoque(Produto produto, int quantidade) {
+        // Lógica para adicionar produtos ao estoque.
+    }
 }
