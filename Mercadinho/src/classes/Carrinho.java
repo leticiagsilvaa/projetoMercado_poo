@@ -1,12 +1,10 @@
 package classes;
-
 import java.util.List;
 
 public class Carrinho {
     private Cliente cliente;
     private List<ItemDoCarrinho> produto;
-
-    private int idCarrinho;
+    private Carrinho carrinho;
     private double subTotal;
 
     public Carrinho(Cliente cliente, List<ItemDoCarrinho> produto, int idCarrinho, double subTotal) {
