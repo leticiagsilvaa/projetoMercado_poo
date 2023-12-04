@@ -5,10 +5,10 @@ import java.util.ArrayList;
 
 public class Cliente extends Pessoa {
     private String idCliente;
-    private List<Venda> historicoCompras;
+    private List<String> historicoCompras;
 
-    public Cliente(String nome, String endereco, String telefone, String cpf, String idCliente) {
-        super(nome, endereco, telefone, cpf);
+    public Cliente(String nome, String cpf, String idCliente) {
+        super(nome, cpf);
         this.idCliente = idCliente;
         this.historicoCompras = new ArrayList<>();
     }
@@ -18,7 +18,7 @@ public class Cliente extends Pessoa {
         return idCliente;
     }
 
-    public List<Venda> getHistoricoCompras() {
+    public List<String> getHistoricoCompras() {
         return historicoCompras;
     }
 
@@ -27,21 +27,19 @@ public class Cliente extends Pessoa {
         this.idCliente = idCliente;
     }
 
-    public void setHistoricoCompras(List<Venda> historicoCompras) {
-        this.historicoCompras = historicoCompras;
+    public void setHistoricoCompras(String venda) {
+        historicoCompras.add(venda);
     }
 
     // métodos
+    public void exibirInformacoes(){
+        System.out.println("Informações");
+    };
+
     public void atualizarInformacoes(String atributo, String novoValor) {
         switch (atributo) {
             case "nome":
                 setNome(novoValor);
-                break;
-            case "endereco":
-                setEndereco(novoValor);
-                break;
-            case "telefone":
-                setTelefone(novoValor);
                 break;
             case "cpf":
                 setCpf(novoValor);
