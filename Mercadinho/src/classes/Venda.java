@@ -1,5 +1,7 @@
 package classes;
 
+import java.util.Scanner;
+
 public class Venda {
 
     private Carrinho carrinho;
@@ -8,25 +10,28 @@ public class Venda {
     private Cliente cliente;
 
     private int idVenda;
-    private double valorTotal;
 
-    public Venda(Carrinho carrinho, OperadorDeCaixa operadorDeCaixa, Pagamento pagamento, int idVenda,
-            double valorTotal, Cliente cliente) {
+    public Venda(Carrinho carrinho, OperadorDeCaixa operadorDeCaixa, int idVenda, Cliente cliente) {
         this.carrinho = carrinho;
         this.operadorDeCaixa = operadorDeCaixa;
-        this.pagamento = pagamento;
         this.idVenda = idVenda;
-        this.valorTotal = valorTotal;
         this.cliente = cliente;
     }
 
     // Metodos de compra
-    public double valorTotal() {
-        return this.valorTotal;
+
+    public void adicionarAoHistorico(Carrinho carrinho, Pagamento pagamento, int idVenda, double valorTotal) {
+        String venda = "Produtos:" + carrinho.getProdutosNoCarrinho() + "Id da venda:" + idVenda + "Valor Total:" + carrinho.getSubTotal();
+        cliente.setHistoricoCompras(venda);
     }
 
-    public void adicionarAoHistorico() {
-        cliente.getHistoricoCompras().add(this);
+    public void cancelarCompra() {
+        System.out.println("Venda cancelada.");
+        //fazer cancelamento da venda
+    }
+
+    public void finalizarCompra() {
+       pagamento.escolherPagamento();
     }
 
     // Metodos Getters e Setters da classe compra
@@ -35,7 +40,7 @@ public class Venda {
     }
 
     public double getValorTotal() {
-        return valorTotal;
+        return carrinho.getSubTotal();
     }
 
     public Carrinho getCarrinho() {
@@ -52,10 +57,6 @@ public class Venda {
 
     public void setIdVenda(int idVenda) {
         this.idVenda = idVenda;
-    }
-
-    public void setValorTotal(double valorTotal) {
-        this.valorTotal = valorTotal;
     }
 
     public void setCarrinho(Carrinho carrinho) {
