@@ -1,20 +1,21 @@
+package classes;
+
 import java.time.LocalDate;
+import java.util.Scanner;
 
 public class Pagamento {
     // atributos
     protected String codigo;
-    private double valor;
-    private LocalDate data;
-    private String status;
-    private int idpagamento;
-    private Venda venda;
+    protected double valor;
+    protected LocalDate data;
+    protected String status;
+    protected Venda venda;
 
-    public Pagamento(String codigo, double valor, LocalDate data, String status, int idPagamento, Venda venda) {
+    public Pagamento(String codigo, double valor, LocalDate data, String status, Venda venda) {
         this.codigo = codigo;
         this.valor = valor;
         this.data = data;
         this.status = status;
-        this.idpagamento = idPagamento;
         this.venda = venda;
     }
 
@@ -33,10 +34,6 @@ public class Pagamento {
 
     public String getStatus() {
         return status;
-    }
-
-    public int getIdPagamento() {
-        return idpagamento;
     }
 
     public Venda getVenda() {
@@ -61,16 +58,27 @@ public class Pagamento {
         this.status = status;
     }
 
-    public void setIdPagamento(int idPagamento) {
-        this.idpagamento = idPagamento;
-    }
-
     public void setVenda(Venda venda) {
         this.venda = venda;
     }
 
     // métodos
     public void escolherPagamento() {
-        // implementação do método escolherPagamento
+        Scanner input = new Scanner(System.in);
+        System.out.println("Escolha o método de pagamento:");
+        String metodo = input.nextLine();
+        input.close();
+        if(metodo.equals("Dinheiro")){
+            System.out.println("Pagamento será em dinheiro");
+            //chamar classe pagamentoDinheiro
+        }
+        if(metodo.equals("Cartão")){
+            System.out.println("Pagamento será em cartão");
+            //chamar classe pagamentoCartão
+        }
+        if(metodo.equals("Pix")){
+            System.out.println("Pagamento será em Pix");
+            //chamar classe pagamentoPix
+        }
     }
 }
