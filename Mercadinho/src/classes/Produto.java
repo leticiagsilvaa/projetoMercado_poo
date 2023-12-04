@@ -4,14 +4,14 @@ public class Produto {
     private String nomeProduto;
     private int codigoProduto;
     private String categoriaProduto;
-    private int quantidadeProduto;
+    private int quantidadeDisponivel;
     private double valorProduto;
 
-    public Produto(String nomeProduto, int codigoProduto, String categoriaProduto, int quantidadeProduto, double valorProduto) {
+    public Produto(String nomeProduto, int codigoProduto, String categoriaProduto, int quantidadeDisponivel, double valorProduto) {
         this.nomeProduto = nomeProduto;
         this.codigoProduto = codigoProduto;
         this.categoriaProduto = categoriaProduto;
-        this.quantidadeProduto = quantidadeProduto;
+        this.quantidadeDisponivel = quantidadeDisponivel;
         this.valorProduto = valorProduto;
     }
 
@@ -28,8 +28,8 @@ public class Produto {
      public String getCategoria(){
         return categoriaProduto;
     }
-     public int getQuantidade(){
-        return quantidadeProduto;
+     public int getQuantidadeDisponivel(){
+        return quantidadeDisponivel;
     }
     
     //setters
@@ -44,8 +44,5 @@ public class Produto {
     }
     public void setCategoria(String categoria){
         this.categoriaProduto = categoria;
-    }
-    public void setQuantidade(int quantidade){
-        this.quantidadeProduto = quantidade;
     }
 }
