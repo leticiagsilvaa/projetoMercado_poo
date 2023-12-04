@@ -3,17 +3,25 @@ package classes;
 public class ItemDoCarrinho {
     private Produto produto;
     private int quantidadeItem;
-    private double valorRemessa;
 
-    public ItemDoCarrinho(int quantidadeItem, Produto produto, double valorRemessa) {
+    public ItemDoCarrinho(int quantidadeItem, Produto produto) {
         this.produto = produto;
         this.quantidadeItem = quantidadeItem;
-        calcularRemessa();
+        verificacaoDeQuantidade();
+    }
+
+    //metodos
+
+    public void verificacaoDeQuantidade(){
+        if(quantidadeItem > produto.getQuantidadeDisponivel()){
+            //Criar exceção
+            System.out.println("Erro: O produto não tem a quantidade necessária para ser vendido");
+        }
     }
 
     // getters
     public double getValor() {
-        return valorRemessa;
+        return produto.getValor();
     }
 
     public int getQuantidade() {
@@ -21,17 +29,7 @@ public class ItemDoCarrinho {
     }
 
     // setters
-    public void setValor(double valor) {
-        this.valorRemessa = valor;
-    }
-
     public void setQuantidade(int quantidade) {
         this.quantidadeItem = quantidade;
-    }
-
-    // métodos
-    public double calcularRemessa() {
-        valorRemessa = quantidadeItem * produto.getValor();
-        return valorRemessa;
     }
 }
