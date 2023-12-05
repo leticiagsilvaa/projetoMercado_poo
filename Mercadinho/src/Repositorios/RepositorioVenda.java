@@ -1,3 +1,4 @@
+package repositorios;
 
 public class RepositorioVenda {
     private Venda vendas[];
