@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
-
 public class RepositorioCliente {
     private Cliente clientes[];
     private int quantidadeClientes;
