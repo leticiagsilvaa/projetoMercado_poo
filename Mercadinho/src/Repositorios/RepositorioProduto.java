@@ -1,50 +1,53 @@
-package Repositorio;
-
-import java.util.ArrayList;
-import java.util.List;
+package repositorios;
 
 public class RepositorioProduto {
-    private List<Produto> produtos;
 
-    /**
-     * 
-     */
-    public RepositorioProduto() {
-        this.produtos = new ArrayList<>();
+    private Produto produtos[];
+    private int quantidadeProdutos;
+
+    public RepositorioProduto(int quantidadeProdutos, int quantidadeMaxima) {
+        this.quantidadeProdutos = 0;
+        this.produtos = produtos[quantidadeMaxima];
     }
 
     public void adicionarProduto(Produto produto) {
-        produtos.add(produto);
+        if(quantidadeProdutos < produtos.length){
+            produtos[quantidadeProdutos] = produto;
+            quantidadeProdutos++;
+        else{
+            return false;
+        }
+        }
     }
 
     public void removerProduto(int codigoProduto) {
-        Produto produtoParaRemover = null;
-
-        for (Produto produto : produtos) {
-            if (produto.getCodigo() == codigoProduto) {
-                produtoParaRemover = produto;
-                break;
-            }
-        }
-
-        if (produtoParaRemover != null) {
-            produtos.remove(produtoParaRemover);
-        }
+       for(int i = 0, i < quantidadeProdutos; i++){
+        if(produtos[i].getCodigo().equals(codigoProduto){
+            produtos[i] = null;
+        })
+       }
     }
 
     public Produto buscarProduto(int codigoProduto) {
-        for (Produto produto : produtos) {
-            if (produto.getCodigo() == codigoProduto) {
-                return produto;
+        for (int i = 0, i < quantidadeProdutos; i++) {
+            if (produto[i].getCodigo().equals(codigoProduto)) {
+                return produto[i];
             }
         }
-        return null; // Produto não encontrado
+        return null; 
     }
 
-    public List<Produto> listarProdutos() {
-        return new ArrayList<>(produtos); // Retorna uma cópia da lista para evitar modificação externa
+    public Produto listarProdutos() {
+        return produtos;
     }
 
-    // Outros
+    public void atualizarEstoqueProduto(int codigoProduto, int quantidade){
+        for (int i = 0, i < quantidadeProdutos; i++) {
+            if (produto[i].getCodigo().equals(codigoProduto)) {
+                produto[i].setQuantidadeDisponivel(quantidade);
+            }
+            return null;
+    }
 
+}
 }

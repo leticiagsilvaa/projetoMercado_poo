@@ -1,4 +1,4 @@
-package classes;
+package pagamentos;
 
 import java.time.LocalDate;
 
@@ -12,13 +12,14 @@ public class PagamentoPix extends Pagamento {
         this.chavepix = chavepix;
     }
 
+    @Overrides
     public void pagar(){
-        gerarChavepix();
-        System.out.println("Compra autorizada");
+        return venda.getValorTotal();
     }
 
     public String gerarChavepix() {
-        return chavepix;
+        return true;
+        //return chavepix
     }
 
 }

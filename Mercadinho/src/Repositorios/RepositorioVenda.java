@@ -1,31 +1,39 @@
-import java.util.ArrayList;
-import java.util.List;
 
 public class RepositorioVenda {
-    private List<Venda> vendas;
+    private Venda vendas[];
 
-    public RepositorioVenda() {
-        this.vendas = new ArrayList<>();
+    public RepositorioVenda(int quantidadeMaxima, int quantidadeVendas) {
+        this.vendas = vendas[quantidadeMaxima];
+        this.quantidadeVendas = 0;
     }
 
     public void adicionarVenda(Venda venda) {
-        vendas.add(venda);
+        if(quantidadeVendas < vendas.length){
+            vendas[quantidadeVendas] = venda;
+            quantidadeVendas++;
+        }
+        else{
+            return false;
+        }
     }
 
     public void removerVenda(int idVenda) {
-        Venda vendaParaRemover = null;
-
-        for (Venda venda : vendas) {
-            if (venda.getIdVenda() == idVenda) {
-                vendaParaRemover = venda;
-                break;
+        for(int i = 0; i < quantidadeVendas, i++){
+            if(vendas[i].getCodigo().equals(idVenda)){
+                vendas[i] = null;
             }
-        }
-
-        if (vendaParaRemover != null) {
-            vendas.remove(vendaParaRemover);
         }
     }
 
     public Venda buscarVenda(int idVenda) {
-        for (
+        for(int i = 0, i< quantidadeVendas, i++){
+            if(vendas[i].getCodigo().equals(idVenda){
+                return vendas[i];
+            })
+        }
+    }
+
+    public Venda listarVendas(){
+        return vendas;
+    }
+    }

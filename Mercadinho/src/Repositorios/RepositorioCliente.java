@@ -2,57 +2,67 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RepositorioCliente {
-    private List<Cliente> clientes;
+    private Cliente clientes[];
+    private int quantidadeClientes;
 
-    public RepositorioCliente() {
-        this.clientes = new ArrayList<>();
+     public RepositorioCliente(int tamanhoMaximo) {
+        clientes = new Cliente[tamanhoMaximo];
+        quantidadeClientes = 0;
     }
 
     public void adicionarCliente(Cliente cliente) {
-        clientes.add(cliente);
+        if (quantidadeClientes < clientes.length) {
+            clientes[quantidadeClientes] = cliente;
+            quantidadeClientes++;
+        } else {
+            return false;
+        }
     }
 
     public void removerCliente(String idCliente) {
-        Cliente clienteParaRemover = null;
-
-        for (Cliente cliente : clientes) {
-            if (cliente.getIdCliente().equals(idCliente)) {
-                clienteParaRemover = cliente;
-                break;
-            }
-        }
-
-        if (clienteParaRemover != null) {
-            clientes.remove(clienteParaRemover);
+        for(int i = 0, i < quantidadeClientes, i++){
+            if (clientes[i].getIdCliente().equals(idCliente){
+                clientes[i] = null
+            });
         }
     }
+ }
 
     public Cliente buscarCliente(String idCliente) {
-        for (Cliente cliente : clientes) {
-            if (cliente.getIdCliente().equals(idCliente)) {
-                return cliente;
+        for (int i = 0, i < quantidadeClientes, i++) {
+            if (clientes[i].getIdCliente().equals(idCliente)) {
+                return cliente[i];
             }
         }
-        return null; // Cliente não encontrado
+        return null;
     }
 
-    public List<Cliente> listarClientes() {
-        return new ArrayList<>(clientes); // Retorna uma cópia da lista para evitar modificação externa
+     public Cliente buscarIndex(String idCliente) {
+        for (int i = 0, i < quantidadeClientes, i++) {
+            if (clientes[i].getIdCliente().equals(idCliente)) {
+                return i;
+            }
+        }
+        return null;
+    }
+
+    public void listarClientes() {
+        return clientes;
     }
 
     public void atualizarCliente(String idCliente, String atributo, String novoValor) {
-        Cliente clienteParaAtualizar = buscarCliente(idCliente);
+        Cliente clienteParaAtualizar = buscarIndex(idCliente);
 
         if (clienteParaAtualizar != null) {
             switch (atributo) {
                 case "nome":
-                    clienteParaAtualizar.setNome(novoValor);
+                    clientes[clienteParaAtualizar].setNome(novoValor);
                     break;
                 case "cpf":
-                    clienteParaAtualizar.setCpf(novoValor);
+                    clientes[clienteParaAtualizar].setCpf(novoValor);
                     break;
                 case "idCliente":
-                    clienteParaAtualizar.setIdCliente(novoValor);
+                    clientes[clienteParaAtualizar].setIdCliente(novoValor);
                     break;
                 default:
                     System.out.println("Atributo desconhecido: " + atributo);
@@ -61,5 +71,3 @@ public class RepositorioCliente {
             System.out.println("Cliente não encontrado com ID: " + idCliente);
         }
     }
-
-}

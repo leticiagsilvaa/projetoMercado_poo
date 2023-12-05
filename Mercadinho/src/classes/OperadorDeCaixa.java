@@ -1,4 +1,5 @@
 package classes;
+import classes.Venda;
 
 import java.util.Scanner;
 
@@ -6,9 +7,8 @@ public class OperadorDeCaixa extends Pessoa {
     protected int idCaixa;
     private String endereco;
     private String telefone;
-    private Venda venda;
 
-    public OperadorDeCaixa(String cpf, String nome, String endereco, String telefone, int idCaixa, Venda venda) {
+    public OperadorDeCaixa(String cpf, String nome, String endereco, String telefone, int idCaixa) {
         super(cpf, nome);
         this.endereco = endereco;
         this.telefone = telefone; 

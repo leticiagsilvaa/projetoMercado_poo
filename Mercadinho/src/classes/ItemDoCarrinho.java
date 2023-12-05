@@ -14,9 +14,10 @@ public class ItemDoCarrinho {
 
     public void verificacaoDeQuantidade(){
         if(quantidadeItem > produto.getQuantidadeDisponivel()){
-            //Criar exceção
-            System.out.println("Erro: O produto não tem a quantidade necessária para ser vendido");
+            return false;
         }
+
+        //criar exceção
     }
 
     // getters

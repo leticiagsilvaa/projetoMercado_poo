@@ -1,5 +1,6 @@
 package classes;
 
+import app.UI;
 import java.util.Scanner;
 
 public class Venda {
@@ -31,7 +32,7 @@ public class Venda {
     }
 
     public void finalizarCompra() {
-       pagamento.escolherPagamento();
+       UI.escolherPagamento();
     }
 
     // Metodos Getters e Setters da classe compra
