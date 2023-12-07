@@ -1,4 +1,6 @@
-package repositorios;
+package Repositorios;
+
+import classes.Cliente;
 
 public class RepositorioCliente {
     
@@ -14,46 +16,43 @@ public class RepositorioCliente {
         if (quantidadeClientes < clientes.length) {
             clientes[quantidadeClientes] = cliente;
             quantidadeClientes++;
-        } else {
-            return false;
         }
     }
 
     public void removerCliente(String idCliente) {
-        for(int i = 0, i < quantidadeClientes, i++){
-            if (clientes[i].getIdCliente().equals(idCliente){
-                clientes[i] = null
-            });
+        for(int i = 0; i < quantidadeClientes; i++){
+            if (clientes[i].getIdCliente().equals(idCliente)){
+                clientes[i] = null;
+            };
         }
     }
- }
 
     public Cliente buscarCliente(String idCliente) {
-        for (int i = 0, i < quantidadeClientes, i++) {
+        for (int i = 0; i < quantidadeClientes; i++) {
             if (clientes[i].getIdCliente().equals(idCliente)) {
-                return cliente[i];
+                return clientes[i];
             }
         }
         return null;
     }
 
-     public Cliente buscarIndex(String idCliente) {
-        for (int i = 0, i < quantidadeClientes, i++) {
+     public int buscarIndex(String idCliente) {
+        for (int i = 0; i < quantidadeClientes; i++) {
             if (clientes[i].getIdCliente().equals(idCliente)) {
                 return i;
             }
         }
-        return null;
+        return -1;
     }
 
-    public void listarClientes() {
+    public Cliente[] listarClientes() {
         return clientes;
     }
 
     public void atualizarCliente(String idCliente, String atributo, String novoValor) {
-        Cliente clienteParaAtualizar = buscarIndex(idCliente);
+        int clienteParaAtualizar = buscarIndex(idCliente);
 
-        if (clienteParaAtualizar != null) {
+        if (clienteParaAtualizar != -1) {
             switch (atributo) {
                 case "nome":
                     clientes[clienteParaAtualizar].setNome(novoValor);
@@ -71,3 +70,4 @@ public class RepositorioCliente {
             System.out.println("Cliente não encontrado com ID: " + idCliente);
         }
     }
+}

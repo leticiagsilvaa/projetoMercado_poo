@@ -32,11 +32,13 @@ public class Cliente extends Pessoa {
     }
 
     // métodos
+    @Override
     public void exibirInformacoes(){
         System.out.println("Informações");
     };
 
-    public void atualizarInformacoes(String atributo, String novoValor) {
+    @Override
+    public void atualizarInformacoes(String atributo, String novoValor, int valor) {
         switch (atributo) {
             case "nome":
                 setNome(novoValor);

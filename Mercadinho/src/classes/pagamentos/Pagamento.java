@@ -1,20 +1,17 @@
 package pagamentos;
 
 import java.time.LocalDate;
-import java.util.Scanner;
 
-public class Pagamento {
+public abstract class Pagamento {
     // atributos
     protected String codigo;
     protected LocalDate data;
     protected String status;
-    protected Venda venda;
 
-    public Pagamento(String codigo, LocalDate data, String status, Venda venda) {
+    public Pagamento(String codigo, LocalDate data, String status) {
         this.codigo = codigo;
         this.data = data;
         this.status = status;
-        this.venda = venda;
     }
 
     // getters
@@ -30,10 +27,6 @@ public class Pagamento {
         return status;
     }
 
-    public Venda getVenda() {
-        return venda;
-    }
-
     // setters
     public void setCodigo(String codigo) {
         this.codigo = codigo;
@@ -47,10 +40,6 @@ public class Pagamento {
         this.status = status;
     }
 
-    public void setVenda(Venda venda) {
-        this.venda = venda;
-    }
-
     //métodos
-    public abstract class pagar();
+    public abstract void pagar();
 }

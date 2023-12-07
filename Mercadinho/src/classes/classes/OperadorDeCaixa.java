@@ -1,7 +1,4 @@
 package classes;
-import classes.Venda;
-
-import java.util.Scanner;
 
 public class OperadorDeCaixa extends Pessoa {
     protected int idCaixa;
@@ -13,19 +10,34 @@ public class OperadorDeCaixa extends Pessoa {
         this.endereco = endereco;
         this.telefone = telefone; 
         this.idCaixa = idCaixa;
-        this.venda = venda;
+    }
+
+    public String endereco() {
+        return endereco;
+    }
+
+    public String telefone() {
+        return telefone;
     }
 
     public int getIdCaixa() {
         return idCaixa;
     }
 
+    public void setIdCaixa(int idCaixa) {
+        this.idCaixa = idCaixa;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
     // métodos
     public void iniciarAtendimento() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Por favor, digite o CPF do cliente: ");
-        String cpfCliente = scanner.nextLine();
-        scanner.close();
         System.out.println("Iniciando atendimento no caixa: " + getIdCaixa());
     }
 
@@ -43,11 +55,31 @@ public class OperadorDeCaixa extends Pessoa {
         //ideia
     }
 
+    @Override
     public void exibirInformacoes(){
         System.out.println("Informações");
     };
 
-    public void atualizarInformacoes(String atributo, String novoValor){
-        System.out.println("Atualizar informações");
+    @Override
+    public void atualizarInformacoes(String atributo, String novoValor, int valor){
+        switch (atributo) {
+            case "nome":
+                setNome(novoValor);
+                break;
+            case "cpf":
+                setCpf(novoValor);
+                break;
+            case "idCaixa":
+                setIdCaixa(valor);
+                break;
+            case "telefone":
+                setTelefone(novoValor);
+                break;
+            case "endereco":
+                setEndereco(novoValor);
+                break;
+            default:
+                System.out.println("Atributo desconhecido: " + atributo);
     };
+  }
 }

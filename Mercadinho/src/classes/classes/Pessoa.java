@@ -31,7 +31,7 @@ public abstract class Pessoa {
 
     public abstract void exibirInformacoes();
 
-    public abstract void atualizarInformacoes(String atributo, String novoValor);
+    public abstract void atualizarInformacoes(String atributo, String novoValor, int valor);
 
     // Método toString
 

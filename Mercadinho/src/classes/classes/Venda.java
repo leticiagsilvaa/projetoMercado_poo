@@ -1,7 +1,7 @@
 package classes;
 
 import app.UI;
-import java.util.Scanner;
+import pagamentos.Pagamento;
 
 public class Venda {
 

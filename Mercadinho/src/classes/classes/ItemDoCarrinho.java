@@ -12,12 +12,11 @@ public class ItemDoCarrinho {
 
     //metodos
 
-    public void verificacaoDeQuantidade(){
+    public boolean verificacaoDeQuantidade(){
         if(quantidadeItem > produto.getQuantidadeDisponivel()){
             return false;
         }
-
-        //criar exceção
+        return true;
     }
 
     // getters

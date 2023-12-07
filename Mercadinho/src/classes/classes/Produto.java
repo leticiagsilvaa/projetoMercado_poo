@@ -25,10 +25,10 @@ public class Produto {
     public String getNome(){
         return nomeProduto;
     }
-     public String getCategoria(){
+    public String getCategoria(){
         return categoriaProduto;
     }
-     public int getQuantidadeDisponivel(){
+    public int getQuantidadeDisponivel(){
         return quantidadeDisponivel;
     }
     
@@ -44,5 +44,8 @@ public class Produto {
     }
     public void setCategoria(String categoria){
         this.categoriaProduto = categoria;
+    }
+    public void setQuantidadeDisponivel(int quantidade){
+        this.quantidadeDisponivel = quantidade;
     }
 }

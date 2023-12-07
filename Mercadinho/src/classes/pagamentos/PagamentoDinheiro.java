@@ -1,26 +1,23 @@
 package pagamentos;
 
 import java.time.LocalDate;
-import java.util.Scanner;
 
 public class PagamentoDinheiro extends Pagamento {
 
-    public PagamentoDinheiro(String codigo, double valor, LocalDate data, String status, Venda venda, double recebido, double troco){
-    super(codigo, valor, data, status, venda);
+    public PagamentoDinheiro(String codigo, LocalDate data, String status){
+    super(codigo, data, status);
     }
 
-    @Overrides
+    @Override
     public void pagar(){
-        return venda.getValorTotal();
+
     }
 
-    public void darTroco(double valor,double recebido){
-        troco = valor - recebido;
-        if (troco >= 0) {
+    public static double darTroco(double valor,double recebido){
+        double troco = valor - recebido;
+        if (troco > 0.0) {
             return troco;
-        else{
-            return false;
-        }
     }
+    return 0.0;
 }
 }

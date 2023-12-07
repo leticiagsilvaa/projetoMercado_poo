@@ -1,29 +1,26 @@
 package pagamentos;
 
 import java.time.LocalDate;
-import java.util.Scanner;
 
 public class PagamentoCartao extends Pagamento {
     
     // Construtor
-    public PagamentoCartao(String codigo, LocalDate data, String status, Venda venda) {
-        super(codigo, data, status, venda);
+    public PagamentoCartao(String codigo, LocalDate data, String status) {
+        super(codigo, data, status);
     }
 
     @Overrides
     public void pagar() {
-        return venda.getValorTotal();
+    System.out.println("Pagamento");
  }
 
-    public void pagarCredito(){
-        double valorParcela = venda.getValorTotal();
-        String recibo = "Compra de " + valorParcela + " aprovada no cartão de crédito.";
+    public static void pagarCredito(double valor){
+        String recibo = "Compra de " + valor + " aprovada no cartão de crédito.";
         return recibo;
         } 
 
-    public void pagarDebito() {
-        double valorParcela = venda.getValorTotal();
-        String recibo = "Compra no valor de R$ " + valorParcela + " debitada no cartão de débito.";
+    public static void pagarDebito(double valor) {
+        String recibo = "Compra no valor de R$ " + valor + " debitada no cartão de débito.";
         return recibo;
         }
 }
