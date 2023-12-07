@@ -56,6 +56,10 @@ public class Venda {
         return pagamento;
     }
 
+     public Cliente getCliente() {
+        return cliente;
+    }
+
     public void setIdVenda(int idVenda) {
         this.idVenda = idVenda;
     }
@@ -66,6 +70,10 @@ public class Venda {
 
     public void setOperadorDeCaixa(OperadorDeCaixa operadorDeCaixa) {
         this.operadorDeCaixa = operadorDeCaixa;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 
     public void setPagamento(Pagamento pagamento) {

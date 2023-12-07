@@ -23,7 +23,7 @@ public class Main {
 
 			OperadorDeCaixa op1 = new OperadorDeCaixa("232", "Fulano", "Rua das Flores, 87", "08199898765", 1);
 
-			Cliente cliente1 = new Cliente("Sicrano", "122334", "1");
+			Cliente cliente1 = new Cliente("Sicrano", "122334", 1);
 
 			Venda venda1 = new Venda(carrinho1, op1, 1, cliente1);
 

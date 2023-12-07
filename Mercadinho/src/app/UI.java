@@ -2,10 +2,16 @@ package app;
 
 import java.util.Scanner;
 
-import pagamentos.PagamentoDinheiro;
+import pagamentos.*;
 
 public class UI {
-    
+
+    public void menu(){
+        System.out.println("Bem vindo ao menu do mercadinho!");
+        System.out.println("O que deseja fazer?");
+    }
+
+
     public static void escolherPagamento() {
         Scanner input = new Scanner(System.in);
         System.out.println("Escolha o método de pagamento:");
@@ -14,7 +20,7 @@ public class UI {
         if(metodo.equals("Dinheiro")){
             System.out.println("Pagamento será em dinheiro");
         }
-        if(metodo.equals("Cartão")){
+        if(metodo.equals("Cartao")){
             System.out.println("Pagamento será em cartão");
         }
         if(metodo.equals("Pix")){
@@ -29,10 +35,10 @@ public class UI {
         Scanner input = new Scanner(System.in);
         String tipoPagamento = input.nextLine();
         if ("1".equals(tipoPagamento)){
-            //Pagar com cartão de crédito
+            System.out.println("Pagamento será em cartão de crédito");
     }
         if ("2".equals(tipoPagamento)){
-            //Pagar com cartão de débito
+            System.out.println("Pagamento será em cartão de débito");
     }
     input.close();
 }

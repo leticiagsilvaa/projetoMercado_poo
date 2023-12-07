@@ -19,26 +19,26 @@ public class RepositorioCliente {
         }
     }
 
-    public void removerCliente(String idCliente) {
+    public void removerCliente(int idCliente) {
         for(int i = 0; i < quantidadeClientes; i++){
-            if (clientes[i].getIdCliente().equals(idCliente)){
+            if (clientes[i].getIdCliente() == idCliente){
                 clientes[i] = null;
             };
         }
     }
 
-    public Cliente buscarCliente(String idCliente) {
+    public Cliente buscarCliente(int idCliente) {
         for (int i = 0; i < quantidadeClientes; i++) {
-            if (clientes[i].getIdCliente().equals(idCliente)) {
+            if (clientes[i].getIdCliente() == idCliente) {
                 return clientes[i];
             }
         }
         return null;
     }
 
-     public int buscarIndex(String idCliente) {
+     public int buscarIndex(int idCliente) {
         for (int i = 0; i < quantidadeClientes; i++) {
-            if (clientes[i].getIdCliente().equals(idCliente)) {
+            if (clientes[i].getIdCliente() == idCliente) {
                 return i;
             }
         }
@@ -49,19 +49,13 @@ public class RepositorioCliente {
         return clientes;
     }
 
-    public void atualizarCliente(String idCliente, String atributo, String novoValor) {
+    public void atualizarCliente(int idCliente, String atributo, String novoValor) {
         int clienteParaAtualizar = buscarIndex(idCliente);
 
         if (clienteParaAtualizar != -1) {
             switch (atributo) {
                 case "nome":
                     clientes[clienteParaAtualizar].setNome(novoValor);
-                    break;
-                case "cpf":
-                    clientes[clienteParaAtualizar].setCpf(novoValor);
-                    break;
-                case "idCliente":
-                    clientes[clienteParaAtualizar].setIdCliente(novoValor);
                     break;
                 default:
                     System.out.println("Atributo desconhecido: " + atributo);

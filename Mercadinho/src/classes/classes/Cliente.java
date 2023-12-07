@@ -4,17 +4,17 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Cliente extends Pessoa {
-    private String idCliente;
+    private int idCliente;
     private List<String> historicoCompras;
 
-    public Cliente(String nome, String cpf, String idCliente) {
+    public Cliente(String nome, String cpf, int idCliente) {
         super(nome, cpf);
         this.idCliente = idCliente;
         this.historicoCompras = new ArrayList<>();
     }
 
     // getters
-    public String getIdCliente() {
+    public int getIdCliente() {
         return idCliente;
     }
 
@@ -23,7 +23,7 @@ public class Cliente extends Pessoa {
     }
 
     // setters
-    public void setIdCliente(String idCliente) {
+    public void setIdCliente(int idCliente) {
         this.idCliente = idCliente;
     }
 
@@ -42,12 +42,6 @@ public class Cliente extends Pessoa {
         switch (atributo) {
             case "nome":
                 setNome(novoValor);
-                break;
-            case "cpf":
-                setCpf(novoValor);
-                break;
-            case "idCliente":
-                setIdCliente(novoValor);
                 break;
             default:
                 System.out.println("Atributo desconhecido: " + atributo);
