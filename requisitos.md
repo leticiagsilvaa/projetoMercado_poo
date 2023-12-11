@@ -1,7 +1,7 @@
 1. Cadastro de Produtos
 2. Registro de Vendas
 3. Controle de Estoque
-4. Identificação do funcionário
+4. Identificação do usuário
 5. Alertas de baixo estoque
 6. Histórico de transações
 7. Meios de pagamento
