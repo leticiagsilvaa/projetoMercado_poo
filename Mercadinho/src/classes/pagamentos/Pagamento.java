@@ -1,8 +1,8 @@
-package pagamento;
+package classes;
 
 import java.time.LocalDate;
 
-public class Pagamento {
+public abstract class Pagamento {
     // atributos
     protected String codigo;
     private double valor;
@@ -18,6 +18,11 @@ public class Pagamento {
         this.status = status;
         this.idpagamento = idPagamento;
     }
+
+    // métodos
+    public abstract void escolherPagamento(); // Método abstrato
+}
+
 
     // getters
     public String getCodigo() {
