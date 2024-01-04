@@ -1,19 +1,27 @@
-package pagamentos;
+package pagamento;
 
 import java.time.LocalDate;
 
 public class PagamentoPix extends Pagamento {
     // atributos
-    //private String chavepix;
+    private String chavepix;
 
     // Construtor
-    public PagamentoPix(String codigo, LocalDate data, String status) {
-        super(codigo, data, status);
-        //this.chavepix = chavepix;
+    public PagamentoPix(String codigo, double valor, LocalDate data, String status, int idPagamento, String chavepix) {
+        super(codigo, valor, data, status, idPagamento);
+        this.chavepix = chavepix;
     }
 
-    @Override
-    public void pagar(){
+    // Métodos
+    public String gerarChavepix() {
+        return chavepix;
+    }
 
+    public String getChavepix() {
+        return chavepix;
+    }
+
+    public void setChavepix(String chavepix) {
+        this.chavepix = chavepix;
     }
 }
