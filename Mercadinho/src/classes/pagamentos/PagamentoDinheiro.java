@@ -1,23 +1,41 @@
-package pagamentos;
+package pagamento;
 
 import java.time.LocalDate;
 
 public class PagamentoDinheiro extends Pagamento {
+    private double recebido;
+    private double troco;
 
-    public PagamentoDinheiro(String codigo, LocalDate data, String status){
-    super(codigo, data, status);
+    public PagamentoDinheiro(double valor, LocalDate data, String status, int idPagamento,
+                             double recebido, double troco) {
+        super("", valor, data, status, idPagamento);  
+        this.recebido = recebido;
+        this.troco = troco;
     }
 
-    @Override
-    public void pagar(){
-
+    public void darTroco(double valor) {
+        double troco = this.recebido - valor;
+        if (troco >= 0) {
+            System.out.println("Troco: R$ " + troco);
+        } else {
+            System.out.println("Valor insuficiente");
+        }
     }
 
-    public static double darTroco(double valor,double recebido){
-        double troco = valor - recebido;
-        if (troco > 0.0) {
-            return troco;
+
+    public double getRecebido() {
+        return recebido;
     }
-    return 0.0;
-}
+
+    public void setRecebido(double recebido) {
+        this.recebido = recebido;
+    }
+
+    public double getTroco() {
+        return troco;
+    }
+
+    public void setTroco(double troco) {
+        this.troco = troco;
+    }
 }
