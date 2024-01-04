@@ -1,22 +1,31 @@
-package pagamentos;
+package pagamento;
 
 import java.time.LocalDate;
 
-public abstract class Pagamento {
+public class Pagamento {
     // atributos
     protected String codigo;
-    protected LocalDate data;
-    protected String status;
+    private double valor;
+    private LocalDate data;
+    private String status;
+    private int idpagamento;
 
-    public Pagamento(String codigo, LocalDate data, String status) {
+    // Construtor
+    public Pagamento(String codigo, double valor, LocalDate data, String status, int idPagamento) {
         this.codigo = codigo;
+        this.valor = valor;
         this.data = data;
         this.status = status;
+        this.idpagamento = idPagamento;
     }
 
     // getters
     public String getCodigo() {
         return codigo;
+    }
+
+    public double getValor() {
+        return valor;
     }
 
     public LocalDate getData() {
@@ -27,9 +36,17 @@ public abstract class Pagamento {
         return status;
     }
 
+    public int getIdPagamento() {
+        return idpagamento;
+    }
+
     // setters
     public void setCodigo(String codigo) {
         this.codigo = codigo;
+    }
+
+    public void setValor(double valor) {
+        this.valor = valor;
     }
 
     public void setData(LocalDate data) {
@@ -40,6 +57,12 @@ public abstract class Pagamento {
         this.status = status;
     }
 
-    //métodos
-    public abstract void pagar();
+    public void setIdPagamento(int idPagamento) {
+        this.idpagamento = idPagamento;
+    }
+
+    // métodos
+    public void escolherPagamento() {
+       
+    }
 }
