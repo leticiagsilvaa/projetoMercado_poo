@@ -1,4 +1,4 @@
-package pagamento;
+package pagamentos;
 
 import java.time.LocalDate;
 
