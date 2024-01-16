@@ -1,6 +1,6 @@
 package Repositorios;
 
-import classes.Produto;
+import Produto;
 
 public class RepositorioProduto {
 
@@ -13,18 +13,18 @@ public class RepositorioProduto {
     }
 
     public void adicionarProduto(Produto produto) {
-        if(quantidadeProdutos < produtos.length){
+        if (quantidadeProdutos < produtos.length) {
             produtos[quantidadeProdutos] = produto;
             quantidadeProdutos++;
         }
     }
 
     public void removerProduto(int codigoProduto) {
-       for(int i = 0; i < quantidadeProdutos; i++){
-        if(produtos[i].getCodigo() == codigoProduto){
-            produtos[i] = null;
+        for (int i = 0; i < quantidadeProdutos; i++) {
+            if (produtos[i].getCodigo() == codigoProduto) {
+                produtos[i] = null;
+            }
         }
-       }
     }
 
     public Produto buscarProduto(int codigoProduto) {
@@ -33,18 +33,18 @@ public class RepositorioProduto {
                 return produtos[i];
             }
         }
-        return null; 
+        return null;
     }
 
     public Produto[] listarProdutos() {
         return produtos;
     }
 
-    public void atualizarEstoqueProduto(int codigoProduto, int quantidade){
+    public void atualizarEstoqueProduto(int codigoProduto, int quantidade) {
         for (int i = 0; i < quantidadeProdutos; i++) {
             if (produtos[i].getCodigo() == codigoProduto) {
                 produtos[i].setQuantidadeDisponivel(quantidade);
             }
+        }
     }
-}
 }

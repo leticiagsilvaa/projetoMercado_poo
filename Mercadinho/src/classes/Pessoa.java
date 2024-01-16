@@ -1,4 +1,3 @@
-package classes;
 
 public abstract class Pessoa {
     private String cpf;
@@ -26,7 +25,7 @@ public abstract class Pessoa {
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
-    
+
     // Métodos abstratos
 
     public abstract void exibirInformacoes();
@@ -37,6 +36,6 @@ public abstract class Pessoa {
 
     public String toString() {
         return getNome() + "{" +
-                "cpf: " + getCpf()+ "}";
+                "cpf: " + getCpf() + "}";
     }
 }

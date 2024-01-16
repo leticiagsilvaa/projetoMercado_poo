@@ -1,4 +1,3 @@
-package classes;
 
 import app.UI;
 import pagamentos.Pagamento;
@@ -22,17 +21,18 @@ public class Venda {
     // Metodos de compra
 
     public void adicionarAoHistorico(Carrinho carrinho, Pagamento pagamento, int idVenda, double valorTotal) {
-        String venda = "Produtos:" + carrinho.getProdutosNoCarrinho() + "Id da venda:" + idVenda + "Valor Total:" + carrinho.getSubTotal();
+        String venda = "Produtos:" + carrinho.getProdutosNoCarrinho() + "Id da venda:" + idVenda + "Valor Total:"
+                + carrinho.getSubTotal();
         cliente.setHistoricoCompras(venda);
     }
 
     public void cancelarCompra() {
         System.out.println("Venda cancelada.");
-        //fazer cancelamento da venda
+        // fazer cancelamento da venda
     }
 
     public void finalizarCompra() {
-       UI.escolherPagamento();
+        UI.escolherPagamento();
     }
 
     // Metodos Getters e Setters da classe compra
@@ -56,7 +56,7 @@ public class Venda {
         return pagamento;
     }
 
-     public Cliente getCliente() {
+    public Cliente getCliente() {
         return cliente;
     }
 

@@ -1,5 +1,3 @@
-package classes;
-
 public class OperadorDeCaixa extends Pessoa {
     protected int idCaixa;
     private String endereco;
@@ -8,7 +6,7 @@ public class OperadorDeCaixa extends Pessoa {
     public OperadorDeCaixa(String cpf, String nome, String endereco, String telefone, int idCaixa) {
         super(cpf, nome);
         this.endereco = endereco;
-        this.telefone = telefone; 
+        this.telefone = telefone;
         this.idCaixa = idCaixa;
     }
 
@@ -52,16 +50,16 @@ public class OperadorDeCaixa extends Pessoa {
     }
 
     public void adicionarProdutoAoEstoque(Produto produto, int quantidade) {
-        //ideia
+        // ideia
     }
 
     @Override
-    public void exibirInformacoes(){
+    public void exibirInformacoes() {
         System.out.println("Informações");
     };
 
     @Override
-    public void atualizarInformacoes(String atributo, String novoValor, int valor){
+    public void atualizarInformacoes(String atributo, String novoValor, int valor) {
         switch (atributo) {
             case "nome":
                 setNome(novoValor);
@@ -80,6 +78,7 @@ public class OperadorDeCaixa extends Pessoa {
                 break;
             default:
                 System.out.println("Atributo desconhecido: " + atributo);
-    };
-  }
+        }
+        ;
+    }
 }

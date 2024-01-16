@@ -1,4 +1,3 @@
-package classes;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -33,7 +32,7 @@ public class Cliente extends Pessoa {
 
     // métodos
     @Override
-    public void exibirInformacoes(){
+    public void exibirInformacoes() {
         System.out.println("Informações");
     };
 

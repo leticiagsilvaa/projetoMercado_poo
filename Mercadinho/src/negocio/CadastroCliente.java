@@ -1,19 +1,19 @@
 package negocio;
 
-import classes.Cliente;
+import Cliente;
 import Repositorios.RepositorioCliente;
 
 public class CadastroCliente {
 
-    //CRUD
+    // CRUD
     private RepositorioCliente repositorio;
 
     public CadastroCliente(RepositorioCliente repositorio) {
         this.repositorio = repositorio;
     }
 
-    public void cadastrar(Cliente cliente, String nome, String cpf, int idCliente, String historicoCompras){
-        if(cliente != null){
+    public void cadastrar(Cliente cliente, String nome, String cpf, int idCliente, String historicoCompras) {
+        if (cliente != null) {
             cliente.setNome(nome);
             cliente.setCpf(cpf);
             cliente.setIdCliente(idCliente);
@@ -23,9 +23,9 @@ public class CadastroCliente {
 
     public Cliente buscarCliente(int cod) {
         return this.repositorio.buscarCliente(cod);
-        }
-        
+    }
+
     public void removerCliente(int cod) {
         this.repositorio.removerCliente(cod);
-        }
+    }
 }

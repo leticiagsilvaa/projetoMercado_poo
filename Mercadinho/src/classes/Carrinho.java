@@ -1,19 +1,18 @@
-package classes;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Carrinho {
     private Cliente cliente;
-    private List<ItemDoCarrinho> produtos  = new ArrayList<>();
+    private List<ItemDoCarrinho> produtos = new ArrayList<>();
     private int idCarrinho;
     private double subTotal;
 
-    public Carrinho(int idCarrinho){
+    public Carrinho(int idCarrinho) {
         this.idCarrinho = idCarrinho;
         this.subTotal = 0.0;
     }
-    
+
     // Métodos de carrinho
 
     public void adicionarAoCarrinho(ItemDoCarrinho item) {
